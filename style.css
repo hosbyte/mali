@@ -1,0 +1,180 @@
+/* ? navbar background */
+.backg{
+  background: linear-gradient(to right , rgb(229, 255, 0) , rgb(255, 0, 0));
+}
+
+/* ! ریسپانسیو برای دستگاه های مختلف */
+@media (max-width: 768px) {
+  .selectForm {
+    padding: 25px;
+    width: 95%;
+  }
+            
+  h2 {
+    font-size: 22px;
+  }
+            
+  .form-control, .btn-submit {
+    padding: 12px;
+  }
+}    
+@media (max-width: 480px) {
+  .selectForm {
+    padding: 20px;
+  }
+            
+  h2 {
+    font-size: 20px;
+  }
+            
+  label {
+    font-size: 16px;
+  }
+            
+  .form-control, .btn-submit {
+    font-size: 14px;
+  }
+            
+  .calendar-icon {
+    font-size: 40px;
+  }
+}
+
+.table-container {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+h2 {
+    color: #0d6efd;
+    margin-bottom: 20px;
+}
+
+.selectForm {
+  position: flex;
+  /* margin-right: 50%; */
+  margin-top: 30px;
+  width: 90%;
+  max-width: 500px;
+  background: linear-gradient(to right, yellow , red);
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  transition: all 0.3s ease;
+}
+        
+.selectForm:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 35px rgba(0, 0, 0, 0.3);
+}
+        
+h2 {
+  color: #2c3e50;
+  margin-bottom: 25px;
+  font-weight: 700;
+  position: relative;
+  padding-bottom: 10px;
+}
+h2:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(to right, #ff7e5f, #feb47b);
+  border-radius: 2px;
+}
+        
+.form-group {
+  margin-bottom: 25px;
+  text-align: right;
+}
+        
+label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: 600;
+  color: #34495e;
+  font-size: 18px;
+}
+        
+.form-control {
+  width: 100%;
+  padding: 15px;
+  border: 2px solid #ddd;
+  border-radius: 12px;
+  font-size: 16px;
+  transition: all 0.3s;
+  background-color: #f8f9fa;
+}        
+.form-control:focus {
+  border-color: #4e54c8;
+  box-shadow: 0 0 0 0.25rem rgba(78, 84, 200, 0.25);
+  background-color: #fff;
+}
+        
+.btn-submit {
+  background: linear-gradient(to right, red, yellow);
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 12px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+  width: 100%;
+  margin-top: 10px;
+}        
+.btn-submit:hover {
+  background: linear-gradient(to left, red, yellow);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+        
+.calendar-icon {
+  font-size: 50px;
+  color: #4e54c8;
+  margin-bottom: 20px;
+  animation: pulse 2s infinite;
+}
+        
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.back-color-k th{
+  background-color: red !important
+}
+.back-color-k td{
+  background-color: red !important
+}
+.back-color-d th{
+  background-color: yellow !important
+}
+.back-color-d td{
+  background-color: yellow !important
+}
+
+/* FIXME: */
+.table-size{
+  width: 85%;
+}
+
+.input{
+  width: 100%;
+  padding: 15px;
+  border: 2px solid #ddd;
+  border-radius: 12px;
+  font-size: 16px;
+  transition: all 0.3s;
+  background-color: #f8f9fa;
+}
