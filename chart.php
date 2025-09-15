@@ -1,8 +1,3 @@
-<?php
-include 'db.php';
-session_start();
-
-?>
 
 <!DOCTYPE html>
 <html lang="en" dir="rtl">
@@ -14,8 +9,7 @@ session_start();
     <link href="style.css" rel="stylesheet">
     <script src="https://hosbyte.ir/files/bootstrap-5.3.7-dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://hosbyte.ir/files/jquery-3.7.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
-    <!-- <script src="https://hosbyte.ir/files/chart.js"></script> -->
+    <script src="https://hosbyte.ir/files/Chart.js"></script>
     <script src="jquery.js"></script>
     <title>mali</title>
   </head>
@@ -42,37 +36,100 @@ session_start();
         </div>
       </div>
     </nav>
-    <h1>hello</h1>
-    <center>
-      <canvas id="myChart" style="width:100%;max-width:700px"></canvas>
-    </center>
-    <script>
-      var xValues = ["پرداخت اقساط", "خرید", "خرید خوراکی", "تفریح"];
-      var yValues = [55, 49, 44, 24];
-      var barColors = [
-        "#00aba9",
-        "#ee0b0bff",
-        "#08aaf5ff",
-        "#e8c3b9"
-      ];
 
-      new Chart("myChart", {
-        type: "pie",
-        data: {
-          labels: xValues,
-          datasets: [{
-            backgroundColor: barColors,
-            data: yValues
-          }]
-        },
-        options: {
-          title: {
-            display: true,
-            text: "نمودار میزان مخارج ماه"
+    <!-- // ? انتخاب ماه -->
+    <center>
+      <div class="selectForm">
+        <h2>انتخاب ماه مورد نظر</h2>
+        <form id="month">
+          <div class="form-group">
+            <label for="monthSelect">ماه را انتخاب کنید</label>
+            <select class="form-control" id="monthSelect" name="mounth">
+              <option value="">لطفاً یک ماه انتخاب کنید</option>
+              <option value="far">فروردین</option>
+              <option value="ord">اردیبهشت</option>
+              <option value="kho">خرداد</option>
+              <option value="tir">تیر</option>
+              <option value="mor">مرداد</option>
+              <option value="sha">شهریور</option>
+              <option value="mehr">مهر</option>
+              <option value="aban">آبان</option>
+              <option value="azar">آذر</option>
+              <option value="dey">دی</option>
+              <option value="bah">بهمن</option>
+              <option value="esf">اسفند</option>
+            </select>
+          </div>
+          <button type="submit" class="btn-submit">تأیید و ارسال</button>
+        </form>
+      </div>
+    </center>
+
+    <br>
+    <br>
+
+    <!-- // ?  نمودار -->
+    <center>
+      <canvas id="kharjpie" style="width:100%;max-width:700px"></canvas>
+    </center>
+   
+    <!-- // ? نمودار -->
+    <script>
+      $(document).ready(function(){
+        $("#month").on("submit", function(e){
+          e.preventDefault();
+
+          let mounth = $("#monthSelect").val();
+          if(mounth === ""){
+            alert("لطفاً یک ماه انتخاب کنید");
+            return;
           }
-        }
+
+          if(window.kharjchart){ window.kharjchart.destroy(); }
+
+          $.ajax({
+            url: "getchartdata.php",
+            type: "GET",
+            data: { month: mounth }, // 👈 دقت کن اسمش month باشه نه mounth
+            dataType: "json",
+            success: function(response){
+              if(response.length === 0){
+                alert("هیچ خرجی برای این ماه ثبت نشده!");
+                return;
+              }
+
+              let labels = response.map(item => item.title);
+              let values = response.map(item => item.total);
+
+              let ctx = document.getElementById("kharjpie").getContext("2d");
+              window.kharjchart = new Chart(ctx, {
+                type: 'pie',
+                data: {
+                  labels: labels,
+                  datasets:[{
+                    data: values,
+                    backgroundColor: ["#00aba9","#ee0b0b","#08aaf5","#e8c3b9","#c45850"]
+                  }]
+                },
+                options: {
+                  plugins: {
+                    title: {
+                      display: true,
+                      text: "نمودار میزان مخارج ماه"
+                    }
+                  }
+                }
+              });
+            },
+            error: function(xhr, status, error){
+              console.error(error);
+              alert("خطا در دریافت اطلاعات");
+            }
+          });
+        });
       });
     </script>
+
 
   </body>
 </html>

@@ -166,3 +166,39 @@ $(document).ready(function(){
     });
   });
 });
+
+// // ! انتخاب ماه برای نمودار 
+// $(document).ready(function(){
+//   $("#month").on("submit", function(e){
+//     e.preventDefault(); // جلوگیری از رفرش شدن صفحه
+
+//     let mounth = $("#monthSelect").val();
+//     if(mounth === ""){
+//       alert("لطفاً یک ماه انتخاب کنید");
+//       return;
+//     }
+
+//     let kharjchart;
+//     $.ajax({
+//       url: "getchartdata.php",
+//       type: "GET",
+//       data: { mounth: mounth },
+//       dataType: "json", // می‌گیم که انتظار JSON داریم
+//       success: function(response){
+//         if(response.length === 0){
+//         alert("هیچ خرجی برای این ماه ثبت نشده!");
+//         return;
+//         }
+
+//         let lables = response.map(item => item.title);
+//         let values = response.map(item => item.total);
+
+//       },
+
+//       error: function(xhr, status, error){
+//         console.error(error);
+//         alert("خطا در دریافت اطلاعات");
+//       }
+//     });
+//   });
+// });
