@@ -43,9 +43,9 @@ session_start();
       </div>
     </nav>
     <h1>hello</h1>
-
-    <canvas id="myChart" style="width:100%;max-width:700px"></canvas>
-
+    <center>
+      <canvas id="myChart" style="width:100%;max-width:700px"></canvas>
+    </center>
     <script>
       var xValues = ["پرداخت اقساط", "خرید", "خرید خوراکی", "تفریح"];
       var yValues = [55, 49, 44, 24];
@@ -68,7 +68,7 @@ session_start();
         options: {
           title: {
             display: true,
-            text: "World Wide Wine Production 2018"
+            text: "نمودار میزان مخارج ماه"
           }
         }
       });
