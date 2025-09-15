@@ -12,23 +12,35 @@
   <title>مدیریت مالی</title>
 </head>
 <body>
-  <!-- // ? navbar-->
-  <nav class="navbar navbar-expand-lg navbar-light backg" style="width: cover;">
+  <!-- // ? navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light shadow-sm backg">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">مدیریت مالی</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <a class="navbar-brand fw-bold" href="#">مدیریت مالی</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
+
       <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item"><a class="nav-link active" href="#">خانه</a></li>
-          <li class="nav-item"><a class="nav-link" href="insertentry.php">ثبت دخل</a></li>
-          <li class="nav-item"><a class="nav-link" href="insertspend.php">ثبت مخارج</a></li>
-          <li class="nav-item"><a class="nav-link" href="chart.php">نمودار</a></li>
+        <ul class="navbar-nav ms-auto text-end">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="index.php">خانه</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="insertentry.php">ثبت دخل</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="insertspend.php">ثبت مخارج</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="chart.php">نمودار</a>
+          </li>
         </ul>
       </div>
     </div>
   </nav>
+
+
 
   <!-- // ? انتخاب ماه -->
   <center>
@@ -61,48 +73,53 @@
   <!-- // ? جدول‌ها -->
   <div class="row" style="margin-top: 30px;">
     <!-- // ? خرج -->
-    <div class="col-md-6">
+    <div class="col-12 col-lg-6 mb-4">
       <div class="table-container">
         <h4 class="text-center">خرج</h4>
-        <table class="back-color-k table-size table table-striped table-hover">
-          <thead class="table-primary">
-            <tr>
-              <th>ردیف</th>
-              <th>عنوان</th>
-              <th>مبلغ</th>
-              <th>تاریخ</th>
-              <th>ساعت</th>
-              <th>توضیحات</th>
-              <th>نام کارت</th>
-            </tr>
-          </thead>
-          <tbody></tbody>
-        </table>
+        <div class="table-responsive">
+          <table class="back-color-k table-size table table-striped table-hover">
+            <thead class="table-primary">
+              <tr>
+                <th>ردیف</th>
+                <th>عنوان</th>
+                <th>مبلغ</th>
+                <th>تاریخ</th>
+                <th>ساعت</th>
+                <th>توضیحات</th>
+                <th>نام کارت</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
         <div class="text-end fw-bold mt-2" id="sum-k">جمع خرج: 0 تومان</div>
       </div>
     </div>
 
     <!-- // ? دخل -->
-    <div class="col-md-6">
+    <div class="col-12 col-lg-6 mb-4">
       <div class="table-container">
         <h4 class="text-center">دخل</h4>
-        <table class="back-color-d table-size table table-striped table-hover">
-          <thead class="table-success">
-            <tr>
-              <th>ردیف</th>
-              <th>عنوان</th>
-              <th>مبلغ</th>
-              <th>تاریخ</th>
-              <th>ساعت</th>
-              <th>توضیحات</th>
-              <th>نام کارت</th>
-            </tr>
-          </thead>
-          <tbody></tbody>
-        </table>
-        <div class="text-end fw-bold mt-2" id="sum-d">جمع خرج: 0 تومان</div>
+        <div class="table-responsive">
+          <table class="back-color-d table-size table table-striped table-hover">
+            <thead class="table-primary">
+              <tr>
+                <th>ردیف</th>
+                <th>عنوان</th>
+                <th>مبلغ</th>
+                <th>تاریخ</th>
+                <th>ساعت</th>
+                <th>توضیحات</th>
+                <th>نام کارت</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+        <div class="text-end fw-bold mt-2" id="sum-d">جمع دخل: 0 تومان</div>
       </div>
     </div>
   </div>
+
 </body>
 </html>

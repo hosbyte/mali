@@ -34,7 +34,7 @@ $(document).ready(function(){
             <tr>
               <td>${num}</td>
               <td>${item.title}</td>
-              <td>${item.price}</td>
+              <td>${Number(item.price).toLocaleString('fa-IR')}</td>
               <td>${item.date}</td>
               <td>${item.time}</td>
               <td>${item.about}</td>
@@ -42,7 +42,7 @@ $(document).ready(function(){
             </tr>
           `);
         });
-        $("#sum-k").text(`مجموع خرج: ${response.kharj_sum} تومان`);
+        $("#sum-k").text("جمع خرج: " + Number(response.kharj_sum).toLocaleString('fa-IR') + " تومان");
 
         // دخل
         num = 0;
@@ -52,7 +52,7 @@ $(document).ready(function(){
             <tr>
               <td>${num}</td>
               <td>${item.title}</td>
-              <td>${item.price}</td>
+              <td>${Number(item.price).toLocaleString('fa-IR')} تومان</td>
               <td>${item.date}</td>
               <td>${item.time}</td>
               <td>${item.about}</td>
@@ -60,7 +60,8 @@ $(document).ready(function(){
             </tr>
           `);
         });
-        $("#sum-d").text(`مجموع دخل: ${response.dakhl_sum} تومان`);
+        $("#sum-d").text("مجموع دخل: " + Number(response.dakhl_sum).toLocaleString('fa-IR') +" تومان");
+        // $("#sum-d").text("جمع دخل: " + Number(response.dakhl_sum).toLocaleString('fa-IR') + " تومان");
       },
 
       error: function(xhr, status, error){
@@ -166,39 +167,3 @@ $(document).ready(function(){
     });
   });
 });
-
-// // ! انتخاب ماه برای نمودار 
-// $(document).ready(function(){
-//   $("#month").on("submit", function(e){
-//     e.preventDefault(); // جلوگیری از رفرش شدن صفحه
-
-//     let mounth = $("#monthSelect").val();
-//     if(mounth === ""){
-//       alert("لطفاً یک ماه انتخاب کنید");
-//       return;
-//     }
-
-//     let kharjchart;
-//     $.ajax({
-//       url: "getchartdata.php",
-//       type: "GET",
-//       data: { mounth: mounth },
-//       dataType: "json", // می‌گیم که انتظار JSON داریم
-//       success: function(response){
-//         if(response.length === 0){
-//         alert("هیچ خرجی برای این ماه ثبت نشده!");
-//         return;
-//         }
-
-//         let lables = response.map(item => item.title);
-//         let values = response.map(item => item.total);
-
-//       },
-
-//       error: function(xhr, status, error){
-//         console.error(error);
-//         alert("خطا در دریافت اطلاعات");
-//       }
-//     });
-//   });
-// });

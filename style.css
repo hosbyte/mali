@@ -1,7 +1,12 @@
-/* ? navbar background */
-.backg{
-  background: linear-gradient(to right , rgb(229, 255, 0) , rgb(255, 0, 0));
+/* ? navbar  */
+.backg {
+  background: linear-gradient(to right, rgb(229, 255, 0), rgb(255, 0, 0));
 }
+.navbar .nav-link,
+.navbar .navbar-brand {
+  color: white !important;
+}
+
 
 /* ! ریسپانسیو برای دستگاه های مختلف */
 @media (max-width: 768px) {
