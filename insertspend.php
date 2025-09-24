@@ -87,7 +87,8 @@ if($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['mounth']))
             <select id="titleselect" class="form-control">
               <option value="">یکی را انتخاب کنید</option>
               <option value="پرداخت اقساط">پرداخت اقساط</option>
-              <option value="خرید">خرید</option>
+              <option value="خرید اقلام ضروری">خرید اقلام ضروری</option>
+              <option value="خرید اقلام غیر ضروری">خرید اقلام غیر ضروری</option>
               <option value="خرید خوراکی">خرید خوراکی</option>
               <option value="تفریح">تفریح</option>
             </select>
