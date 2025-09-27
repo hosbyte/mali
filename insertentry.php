@@ -98,6 +98,7 @@ if($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['mounth']))
             <input id="date" class="input">
             <label for="time">ساعت</label>
             <input id="time" class="input">
+            <!--  // ? cart select -->
             <label for="cartselect">انتخاب کارت</label>
             <select id="cartselect" class="form-control">
               <option value="">یکی را انتخاب کنید</option>
@@ -105,6 +106,7 @@ if($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['mounth']))
               <option value="ملی">ملی</option>
               <option value="تجارت">تجارت</option>
               <option value="رسالت">رسالت</option>
+              <option value="نقدی">نقدی</option>
             </select>
           </div>
           <button type="submit" class="btn-submit">ثبت</button>
