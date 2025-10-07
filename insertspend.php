@@ -1,3 +1,4 @@
+<!-- // ?  صفحه مخارج -->
 <?php
 include 'db.php';
 session_start();

@@ -1,3 +1,4 @@
+<!-- // ? صفحه دریافتی -->
 <?php
 include 'db.php';
 session_start();
@@ -66,6 +67,7 @@ if($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['mounth']))
         <h3>ثبت داده ها</h3>
         <form id="entry" method="get">
           <div class="form-group">
+            <!-- // ? select month -->
             <label for="monthSelect">ماه را انتخاب کنید</label>
             <select class="form-control" id="monthSelect" name="mounth">
               <option value="">لطفاً یک ماه انتخاب کنید</option>
@@ -82,6 +84,7 @@ if($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['mounth']))
               <option value="dbahman">بهمن</option>
               <option value="desfand">اسفند</option>
             </select>
+            <!-- // ? select title -->
             <label for="titleselect">عنوان</label>
             <select id="titleselect" class="form-control">
               <option value="">یکی را انتخاب کنید</option>
@@ -89,6 +92,7 @@ if($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['mounth']))
               <option value="امورمدرسه">امور مدرسه</option>
               <option value="برنامه‌نویسی">برنامه‌نویسی</option>
               <option value="از بابا">از بابا</option>
+              <option value="سایر">سایر</option>
             </select>
             <label for="about">توضیحات</label>
             <input id="about" class="input">
